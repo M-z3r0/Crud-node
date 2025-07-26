@@ -1,11 +1,26 @@
 const db = require('../models/db');
 exports.insertCourse = (req,res)=>{
-  
-};
-exports.updateCourse = (req,res)=>{
-
+    const {name,duracao,desc,foto} = req.body;
+    db.query("INSERT INTO cursos(curso_name,curso_duracao,curso_desc,curso_foto) VALUES($1,$2,$3,$4)",[name,duracao,desc,foto],(err,result)=>{
+        if(err){
+            return res.status(500).json(err);
+        }
+        res.sendStatus(201).json({id:result.rows[0].id,name,duracao,desc,foto});
+    });
 };
 exports.selectCourse = (req,res)=>{
-    console.log('conexão pegando');
+    db.query("SELECT * FROM cursos",(err,result)=>{
+        if(err){
+            return res.sendStatus(500).json(err);
+        }
+        res.json(result.rows);
+    });
 };
-exports.deleteCourse = (req,res)=>{};
+exports.deleteCourse = (req,res)=>{
+    const {id} = res.params;
+    db.query('DELETE FROM cursos WHERE id = $1',[id],(err,result)=>{
+        if(err) return res.status(500).json(err);
+        res.status(200).json({message: 'Curso removido com sucesso'});
+    })
+};
+exports.updateCourse = (req,res)=>{};
