@@ -1,6 +1,30 @@
-async function testeAPI(){
-    await fetch('http://localhost:3000/api/cursos', {
-        method: "GET",
-        headers: {"Content-Type":"application/json"},
-    });
-};
+// Index
+
+// Insert Course Page
+const API_URL = 'http://localhost:3000/api/cursos';
+const formICP = document.querySelector('#form');
+formICP.addEventListener('submit', async(e)=>{
+    e.preventDefault();
+    const nomeICP = document.querySelector('#nomeICP');
+    const duracaoICP = document.querySelector('#duracaoICP')
+    const descICP = document.querySelector('#descICP');
+    const imagemICP = document.querySelector('#imagemICP').files[0];
+    const reader = new FileReader();
+    reader.onload = async () => {
+        const img64Parse = reader.result;
+        await fetch(API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                nomeICP: nomeICP.value,
+                duracaoICP: duracaoICP.value,
+                descICP: descICP.value,
+                imagemICP: img64Parse
+            }),
+        });
+        formICP.reset();
+    };
+    reader.readAsDataURL(imagemICP);
+});
+
+// Course Page

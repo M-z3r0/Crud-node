@@ -3,10 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/frontend/assets/css/style.css">
     <title>Projeto 3 - Crud</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Logo</h1>
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#infos">Sobre nós</a></li>
+                <li><a href="./views/insertCourse.html">Criar novo curso</a></li>
+                <li><a href="./views/coursesPage.html">Ver cursos</a></li>
+            </ul>
+        </nav>
+    </header><!--Header-->
+    <main id="home">
+        <section class="presentation-container">
+            <div class="p-c-content">
+                <button class="see-courses-btn">Ver cursos</button>
+            </div>
+        </section><!--Primeira sessão-->
+        <section class="infos" id="infos">
+            <div class="about" id="about">
+                <h1>Sobre nós</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem a mollitia officia temporibus facere qui unde exercitationem quisquam non distinctio cum quas, molestias, facilis consequatur dolorum, enim voluptatum id harum!
+                Accusamus omnis aperiam nobis natus exercitationem, unde saepe? Harum quidem labore dolor. Rerum, unde sapiente. Ipsa error similique vel tempore, minima ad voluptatum, ex illum consequatur fuga temporibus quibusdam consequuntur?
+                Quasi nisi ipsum praesentium architecto, nemo debitis minus id ipsam repellendus natus excepturi nostrum laudantium atque facere, accusantium ad repellat facilis consequatur in ipsa quam, qui pariatur! Quo, vel saepe!
+                </p>
+            </div>
+            <div class="info-container">
+                <div class="info-box">
+                    <p>Icon</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita nihil cupiditate, officia architecto aliquam ipsa repellendus id rem et iure reiciendis facilis, numquam provident, earum tempore unde rerum sit? Dolorem?</p>
+                </div>
+                <div class="info-box">
+                    <p>Icon</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita nihil cupiditate, officia architecto aliquam ipsa repellendus id rem et iure reiciendis facilis, numquam provident, earum tempore unde rerum sit? Dolorem?</p>
+                </div>
+                <div class="info-box">
+                    <p>Icon</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita nihil cupiditate, officia architecto aliquam ipsa repellendus id rem et iure reiciendis facilis, numquam provident, earum tempore unde rerum sit? Dolorem?</p>
+                </div>
+            </div>
+        </section><!--Segunda sessão-->
+        <section class="courses">
+            <button class="see-courses-btn" onclick="callAPILimit()">Ver mais cursos</button>
+        </section><!--Terceira sessão-->
+    </main>
+    <footer>
+        <p>Todos os direitos reservados &copy;M7</p>
+    </footer><!--Footer-->
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

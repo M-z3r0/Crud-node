@@ -1,11 +1,11 @@
 const db = require('../models/db');
 exports.insertCourse = (req,res)=>{
-    const {name,duracao,desc,foto} = req.body;
-    db.query("INSERT INTO cursos(curso_name,curso_duracao,curso_desc,curso_foto) VALUES($1,$2,$3,$4)",[name,duracao,desc,foto],(err,result)=>{
+    const {nomeICP,duracaoICP,descICP,imagemICP} = req.body;
+    db.query("INSERT INTO cursos(curso_name,curso_duracao,curso_desc,curso_foto) VALUES($1,$2,$3,$4) RETURNING id",[nomeICP,duracaoICP,descICP,imagemICP],(err,result)=>{
         if(err){
             return res.status(500).json(err);
         }
-        res.sendStatus(201).json({id:result.rows[0].id,name,duracao,desc,foto});
+        res.sendStatus(201).json({id:result.rows[0].id,nomeICP,duracaoICP,descICP,imagemICP});
     });
 };
 exports.selectCourse = (req,res)=>{

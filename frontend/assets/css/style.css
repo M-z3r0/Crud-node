@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}/*Base sets*/
+
+/*
+
+    INICIO HEADER
+
+*/
+
+header{
+    width: 100%;
+    height: 10dvh;
+    background-color: aliceblue;
+    position: fixed;
+    display: flex;    
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px;
+}
+
+nav.navbar{
+    width: 30%;
+    height: 100%;
+    background-color: yellow;
+    float: right;
+}
+
+nav.navbar > ul.menu{
+    display: flex;
+    justify-content: space-around;
+    margin: 5% 0 0 0;
+    list-style: none;
+}
+
+nav.navbar > ul.menu > li{
+    
+}
+
+/*
+
+    FIM HEADER
+
+*/
+
+/*
+
+    INICIO MAIN
+
+*/
+
+main{
+    width: 100%;
+    background-color: beige;
+    padding: 1em;
+}
+
+section.presentation-container{
+    width: 100%;
+    height: 70dvh;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.infos{
+    width: 100%;
+}
+
+section.infos > div.about{
+    width: 50%;
+    margin: 15dvh 25%;
+}
+
+section.infos > div.about > h1{
+    text-align: center;
+}
+
+section.infos > div.info-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 10dvh 0;
+}
+
+section.infos > div.info-container > div.info-box{
+    width: 30%;
+    height: 33dvh;
+    background-color: brown;
+}
+
+section.courses{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+
+    FIM MAIN
+
+*/
+
+/*
+
+    INICIO FOOTER
+
+*/
+
+footer{
+    width: 100%;
+    height: 10dvh;
+    background-color: gray;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+
+    FIM FOOTER
+
+*/
