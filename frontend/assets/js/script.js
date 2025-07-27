@@ -28,3 +28,23 @@ formICP.addEventListener('submit', async(e)=>{
 });
 
 // Course Page
+async function showCourses(){
+    const res = await fetch(API_URL);
+    const cursos = await res.json();
+    const courseContainer = document.querySelector(".courses-container");
+    courseContainer.innerHTML =  "";
+    cursos.forEach(curso => {
+        courseContainer.innerHTML += `
+            <div class="curso">
+                <img src="${curso.curso_foto}">
+                <h3>${curso.curso_name}</h3>
+                <p class="duracao-course>${curso.curso_duracao}</p>
+                <p class="desc-course>${curso.curso_desc}</p>
+            </div>
+        `;
+    });
+};
+
+async function deleteCourse(id) {
+    await fetch(`${API_URL}/${id}`,{method: 'DELETE'});
+}

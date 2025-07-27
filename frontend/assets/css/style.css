@@ -1,127 +1,170 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}/*Base sets*/
-
-/*
-
-    INICIO HEADER
-
-*/
-
-header{
-    width: 100%;
-    height: 10dvh;
-    background-color: aliceblue;
-    position: fixed;
-    display: flex;    
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 30px;
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-nav.navbar{
-    width: 30%;
-    height: 100%;
-    background-color: yellow;
-    float: right;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+  line-height: 1.6;
 }
 
-nav.navbar > ul.menu{
-    display: flex;
-    justify-content: space-around;
-    margin: 5% 0 0 0;
-    list-style: none;
+/* Header */
+header {
+  background-color: #1f1f1f;
+  color: #fff;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-nav.navbar > ul.menu > li{
-    
+header h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
-/*
-
-    FIM HEADER
-
-*/
-
-/*
-
-    INICIO MAIN
-
-*/
-
-main{
-    width: 100%;
-    background-color: beige;
-    padding: 1em;
+.navbar .menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
 }
 
-section.presentation-container{
-    width: 100%;
-    height: 70dvh;
-    background-color: aqua;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.navbar .menu li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
 }
 
-section.infos{
-    width: 100%;
+.navbar .menu li a:hover {
+  color: #ffc107;
 }
 
-section.infos > div.about{
-    width: 50%;
-    margin: 15dvh 25%;
+/* Primeira sessão - Apresentação */
+.presentation-container {
+  background: url('/frontend/assets/img/banner.jpg') no-repeat center center/cover;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-section.infos > div.about > h1{
-    text-align: center;
+.p-c-content .see-courses-btn{
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: #ffc107;
+  border: none;
+  color: #1f1f1f;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s ease;
 }
 
-section.infos > div.info-container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin: 10dvh 0;
+.p-c-content .see-courses-btn:hover {
+  background-color: #e0a800;
 }
 
-section.infos > div.info-container > div.info-box{
-    width: 30%;
-    height: 33dvh;
-    background-color: brown;
+.see-courses-btn > a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #1f1f1f;
 }
 
-section.courses{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Sobre nós */
+.infos {
+  padding: 60px 40px;
+  background-color: #f4f4f4;
 }
 
-/*
-
-    FIM MAIN
-
-*/
-
-/*
-
-    INICIO FOOTER
-
-*/
-
-footer{
-    width: 100%;
-    height: 10dvh;
-    background-color: gray;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.about h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
 }
 
-/*
+.about p {
+  max-width: 900px;
+  margin-bottom: 40px;
+}
 
-    FIM FOOTER
+/* Cards com infos */
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
-*/
+.info-box {
+  flex: 1;
+  min-width: 280px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.info-box:hover {
+  transform: scale(1.02);
+}
+
+.info-box p:first-child {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #ffc107;
+  text-align: center;
+}
+
+/* Sessão de cursos */
+.courses {
+  padding: 60px 40px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.courses .see-courses-btn {
+  padding: 12px 28px;
+  font-size: 1rem;
+  background-color: #1f1f1f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.courses .see-courses-btn:hover {
+  background-color: #333;
+}
+
+/* Footer */
+footer {
+  background-color: #1f1f1f;
+  color: #ccc;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .navbar .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .info-container {
+    flex-direction: column;
+  }
+
+  .presentation-container {
+    height: 60vh;
+  }
+}

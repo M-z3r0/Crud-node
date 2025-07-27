@@ -41,8 +41,8 @@ exports.selectCourse = (req,res)=>{
     });
 };
 exports.deleteCourse = (req,res)=>{
-    const {id} = res.params;
-    db.query('DELETE FROM cursos WHERE id = $1',[id],(err,result)=>{
+    const {id} = req.params;
+    db.query('DELETE FROM cursos WHERE curso_id = $1',[id],(err,result)=>{
         if(err) return res.status(500).json(err);
         res.status(200).json({message: 'Curso removido com sucesso'});
     })
